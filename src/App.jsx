@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./context/AuthContext";
 
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -31,10 +32,10 @@ const App = () => {
   ]);
 
   return (
-    <div>
+    <AuthProvider>
       <RouterProvider router={router} />
       <Toaster />
-    </div>
+    </AuthProvider>
   );
 };
 
