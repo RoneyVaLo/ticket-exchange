@@ -1,8 +1,5 @@
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
-import { app } from "./config";
-
-// Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { db } from "./config";
 
 export const insertDataIntoCollection = async (nameCollection, data) => {
   if (!nameCollection || !data) {
