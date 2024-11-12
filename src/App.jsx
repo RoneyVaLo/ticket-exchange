@@ -4,18 +4,48 @@ import { AuthProvider } from "./context/AuthContext";
 
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import Layout from "./pages/Layout";
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <div>
-          <h1>Bienvenido</h1>
-        </div>
+        <Layout />
       ),
       errorElement: <div>Not Found 404</div>,
-      children: [],
+      children: [
+        {
+          path: "/dashboard",
+          element: <div>Dashboard de la Página Inicial</div>,
+          errorElement: <div>Not Found 404</div>,
+        },
+        {
+          path: "/activities",
+          element: <div>Lista de Actividades Disponibles</div>,
+          errorElement: <div>Not Found 404</div>,
+        },
+        {
+          path: "/calendar",
+          element: <div>Calendario de Actividades planeadas</div>,
+          errorElement: <div>Not Found 404</div>,
+        },
+        {
+          path: "/record",
+          element: <div>Historial de Actividades realizadas</div>,
+          errorElement: <div>Not Found 404</div>,
+        },
+        {
+          path: "/account",
+          element: <div>Detalles de la Cuenta</div>,
+          errorElement: <div>Not Found 404</div>,
+        },
+        {
+          path: "/suggestions",
+          element: <div>Lista con Sugerencias de Actividades</div>,
+          errorElement: <div>Not Found 404</div>,
+        },
+      ],
     },
     {
       path: "/signin",
